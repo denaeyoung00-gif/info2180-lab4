@@ -3,11 +3,10 @@ const searchBtn = document.getElementById('searchBtn');
 
 searchBtn. addEventListener('click', function() {
     jQuery.ajax({
-        url: 'http://localhost/info2180-lab4/superheroes.php?utm_source=chatgpt.com',
+        url: 'http://localhost/info2180-lab4/superheroes.php',
         method: 'GET'
     })
-    .then(response=> response.text)
-    .then (data => {
+    .done(function(data) {
         alert(data);
     })
     .catch(error => {
