@@ -1,2 +1,3 @@
-# info2180-lab4
-info2180-lab4
+# INFO2180-lab4
+
+This is Lab 4 for Denae Young. 
