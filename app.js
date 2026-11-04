@@ -3,7 +3,7 @@ const searchBtn = document.getElementById('searchBtn');
 
 searchBtn. addEventListener('click', function() {
     jQuery.ajax({
-        url: 'superheroes.php',
+        url: 'http://localhost/info2180-lab4/superheroes.php',
         method: 'GET'
     })
     .done(function(data) {
