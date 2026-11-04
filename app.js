@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchBtn = document.getElementById('searchBtn');
 
     searchBtn.addEventListener('click', function () {
-        fetch('http://localhost/info2180-lab4/superheroes.php')
+        fetch('superheroes.php')
             .then(function (response) {
                 if (!response.ok) {
                     throw new Error('Status ' + response.status);
