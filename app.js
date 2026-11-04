@@ -1,16 +1,19 @@
-document.addEventListener('DOMContentLoaded', function() {
-const searchBtn = document.getElementById('searchBtn');
+document.addEventListener('DOMContentLoaded', function () {
+    const searchBtn = document.getElementById('searchBtn');
 
-searchBtn. addEventListener('click', function() {
-    jQuery.ajax({
-        url: 'http://localhost/info2180-lab4/superheroes.php',
-        method: 'GET'
-    })
-    .done(function(data) {
-        alert(data);
-    })
-    .fail(function(error) {
-        console.error('Error:', error);
+    searchBtn.addEventListener('click', function () {
+        fetch('http://localhost/info2180-lab4/superheroes.php')
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Status ' + response.status);
+                }
+                return response.text();
+            })
+            .then(function (data) {
+                alert(data);
+            })
+            .catch(function (error) {
+                alert('Could not load the superheroes: ' + error.message);
+            });
     });
-})
-});
+}); 
