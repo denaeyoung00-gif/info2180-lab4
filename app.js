@@ -3,13 +3,13 @@ const searchBtn = document.getElementById('searchBtn');
 
 searchBtn. addEventListener('click', function() {
     jQuery.ajax({
-        url: 'http://localhost/info2180-lab4/superheroes.php',
+        url: 'superheroes.php',
         method: 'GET'
     })
     .done(function(data) {
         alert(data);
     })
-    .catch(error => {
+    .fail(function(error) {
         console.error('Error:', error);
     });
 })
