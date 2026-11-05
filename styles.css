@@ -2,10 +2,20 @@ body {
     font-family: "Times New Roman", serif;
     margin: 0;
     padding: 10px;
+    background: #f2f2f2;
+
 }
 
-h1 {
+header {
+    background:#F0131E;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+header h1 {
     margin: 0 0 20px;
+    text-transform: uppercase;
 }
 
 #searchBtn {
@@ -58,3 +68,26 @@ h1 {
     font-size: 11px;
     padding: 2px 0;
 }
+
+main {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.search-row { display: flex; gap: 8px; margin-top: 5px; }
+
+#searchInput { flex: 1; padding: 8px; }
+
+#searchBtn {
+    background: #c62828;
+    color: #FFFF;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#result h3, #result h4 { margin: 8px 0 2px; text-transform: uppercase; }
+#result h4 { font-size: 12px; }
+.error { color: #c62828; font-weight: bold; text-transform: uppercase; }
