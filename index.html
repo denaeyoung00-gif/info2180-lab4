@@ -8,17 +8,16 @@
     <script src="app.js" defer></script>
 </head>
 <body>
-    <header><h1>Avengers Character Search</h1></header>
+    <h1>Avengers Character Search</h1>
+    <button id="searchBtn" type="button">Search</button>
 
-    <main>
-        <label for="searchInput">Search by Full Name or Alias</label>
-        <div class="search-row">
-            <input type="text" id="searchInput" placeholder="e.g. Captain America or Steve Rogers"/>
-            <button id="searchBtn" type="button">Search</button>
+    <div id="overlay" class="hidden">
+        <div class="popup-box">
+            <pre id="popupText"></pre>
+            <div class="popup-footer">
+                <button id="okBtn" type="button">OK</button>
+            </div>
         </div>
-
-        <h2>Result</h2>
-        <div id="result"></div>
-    </main>
+    </div>
 </body>
 </html>

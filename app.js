@@ -1,12 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
     const searchBtn = document.getElementById('searchBtn');
-    const searchInput = document.getElementById('searchInput');
-    const result = document.getElementById('result');
+    const okBtn = document.getElementById('okBtn');
+    const overlay = document.getElementById('overlay');
+    const popupText = document.getElementById('popupText');
+
+    function showPopup(message) {
+        popupText.textContent = message;   // textContent shows the raw <ul><li> text
+        overlay.classList.remove('hidden');
+    }
+
+    okBtn.addEventListener('click', function () {
+        overlay.classList.add('hidden');
+    });
 
     searchBtn.addEventListener('click', function () {
-        const query = searchInput.value.trim();
-
-        fetch('superheroes.php?query=' + encodeURIComponent(query))
+        fetch('superheroes.php')
             .then(function (response) {
                 if (!response.ok) {
                     throw new Error('Status ' + response.status);
@@ -14,10 +22,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.text();
             })
             .then(function (data) {
-                result.innerHTML = data;
+                showPopup(data);
             })
             .catch(function (error) {
-                result.textContent = 'Could not load the superheroes: ' + error.message;
+                showPopup('Could not load the superheroes: ' + error.message);
             });
     });
 });
